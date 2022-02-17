@@ -29,7 +29,7 @@
     - name: "build the dockerfile"
       command: "sh /home/{{ ansible_user }}/tower_ci/build.sh.j2"
       args:
-        chdir: "home/{{ ansible_user }}/tower_ci/"
+        chdir: "/home/{{ ansible_user }}/tower_ci/"
     
     - name: "test image "
       command: "sh /home/{{ ansible_user }}/tower_ci/test.sh.j2"
