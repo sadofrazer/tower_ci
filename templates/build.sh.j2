@@ -1,5 +1,5 @@
 #!/bin/bash
-docker build -t {{ USERNAME }}/{{ IMAGE_NAME }}:{{ IMAGE_TAG }} {{ playbook_dir }}
+docker build -t {{ USERNAME }}/{{ IMAGE_NAME }}:{{ IMAGE_TAG }} .
 docker stop {{ CONTAINER_NAME }} || true
 docker rm {{ CONTAINER_NAME }} || true
 docker run -d --name {{ CONTAINER_NAME }} -e PORT=5000 -p 8081:5000 {{ USERNAME }}/{{ IMAGE_NAME }}:{{ IMAGE_TAG }}
