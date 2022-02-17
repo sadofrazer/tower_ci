@@ -12,7 +12,7 @@
 
     - name: "generate pipeline files template"
       template:
-        src: {{ item }}
+        src: "{{ item }}"
         dest: /home/{{ ansible_user }}/tower_ci/{{ item }}
       loop:
         - build.sh.j2
