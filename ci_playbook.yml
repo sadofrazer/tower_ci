@@ -14,7 +14,7 @@
 
     - name: "copy project files on remote host"
       copy:
-        src: "{{ playboo_dir }}/app_files/"
+        src: "{{ playbook_dir }}/app_files/"
         dest: /home/{{ ansible_user }}/tower_ci/app_files/
 
     - name: "generate pipeline files template"
