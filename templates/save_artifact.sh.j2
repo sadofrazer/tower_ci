@@ -1,6 +1,6 @@
 #!/bin/bash
 docker login -u {{ USERNAME }} -p {{ VAULT_DOCKERHUB_PASS }}
-docker push {{ USERNAME }}/{{ IMAGE_NAME }}:{{ IMAGE_TAG }} {{ playbook_dir }}
+docker push {{ USERNAME }}/{{ IMAGE_NAME }}:{{ IMAGE_TAG }}
 docker stop {{ CONTAINER_NAME }} || true
 docker rm {{ CONTAINER_NAME }} || true
-docker rmi {{ USERNAME }}/{{ IMAGE_NAME }}:{{ IMAGE_TAG }} {{ playbook_dir }}
+docker rmi {{ USERNAME }}/{{ IMAGE_NAME }}:{{ IMAGE_TAG }}
