@@ -20,21 +20,21 @@
     - name: "generate pipeline files template"
       template:
         src: "{{ item }}"
-        dest: /home/{{ ansible_user }}/tower_ci/{{ item }}
+        dest: /home/{{ ansible_user }}/tower_ci/{{ item }}.sh
       loop:
         - build.sh.j2
         - save_artifact.sh.j2
         - test.sh.j2
     
     - name: "build the dockerfile"
-      command: "sh /home/{{ ansible_user }}/tower_ci/build.sh.j2"
+      command: "sh /home/{{ ansible_user }}/tower_ci/build.sh.j2.sh"
       args:
         chdir: "/home/{{ ansible_user }}/tower_ci/"
     
     - name: "test image "
-      command: "sh /home/{{ ansible_user }}/tower_ci/test.sh.j2"
+      command: "sh /home/{{ ansible_user }}/tower_ci/test.sh.j2.sh"
     
     - name: "save artifact "
-      command: "sh /home/{{ ansible_user }}/tower_ci/save_artifact.sh.j2"
+      command: "sh /home/{{ ansible_user }}/tower_ci/save_artifact.sh.j2.sh"
 
     
